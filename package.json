@@ -1,0 +1,22 @@
+{
+  "name": "todo-web-app",
+  "version": "1.0.0",
+  "description": "This is a simple todo list website built using the MERN stack. I utilised  [this tutorial](https://www.youtube.com/watch?v=F9gB5b4jgOI) to help in the construction  of this project, but built this todo list website instead of a note-taking website.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enough-Said/todo-web-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Enough-Said/todo-web-app/issues"
+  },
+  "homepage": "https://github.com/Enough-Said/todo-web-app#readme"
+}
