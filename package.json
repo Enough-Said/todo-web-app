@@ -4,7 +4,7 @@
   "description": "This is a simple todo list website built using the MERN stack. I utilised  [this tutorial](https://www.youtube.com/watch?v=F9gB5b4jgOI) to help in the construction  of this project, but built this todo list website instead of a note-taking website.",
   "main": "index.js",
   "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "build": "cd frontend && npm install && npm run build",
     "start": "npm run start --prefix backend"
   },
   "repository": {
