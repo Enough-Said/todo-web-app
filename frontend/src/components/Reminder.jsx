@@ -75,6 +75,8 @@ const Reminder = ({ reminder, setReminders }) => {
     ? formatDate(new Date(reminder.dueDate))
     : "No due date";
 
+  const today = new Date();
+
   return (
     <div className="w-full py-1">
       <Link to={`/reminders/${reminder._id}`} className={`card w-full bg-base-100 shadow-sm border border-base-300 ${
@@ -93,17 +95,19 @@ const Reminder = ({ reminder, setReminders }) => {
               <p className="text-base-content/70 text-sm mt-1 line-clamp-2">
                 {descriptionPreview}
               </p>
-              <p className="text-xs text-base-content/60 mt-2">
+              <p className={"text-xs text-base-content/60 mt-2" + (new Date() >= new Date(reminder.dueDate) && !reminder.completed ? " text-red-400" : "")}>
                 Due: {dueDateText}
               </p>
             </div>
             <div className="flex items-center gap-2">
-              {reminder.completed && <button 
-                className="btn btn-sm btn-outline"
-                onClick={(e) => {handleIncomplete(e, reminder._id)}}
-              >
-                Mark Not Completed
-              </button>}
+              {
+                reminder.completed && <button 
+                  className="btn btn-sm btn-outline"
+                  onClick={(e) => {handleIncomplete(e, reminder._id)}}
+                >
+                  Mark Not Completed
+                </button>
+              }
 
               <button
                 className={`btn btn-sm btn-outline ${
